@@ -6,47 +6,28 @@ def caesar_cipher(string, shifter_number)
 		 "r" => 17, "s" => 18, "t" => 19, "u" => 20, "v" => 21, "w" => 22, "x" => 23, "y" => 24, "z" => 25 }
 
 	alphabet = ('a'..'z').to_a
-
 	shift_calculation = 0
-
 	words = string.split(" ")
-
-	new_word = []
-
 	letters = []
-
 	encrypted_text = []
 	
-	
-
 	words.each do |word|
-
 		new_word = []
-
 		letters = word.split("")
 
 		letters.each do |letter|
-
 			shift_calculation = shifter[letter] + shifter_number
-
 			if shift_calculation > 25
 				shift_calculation = shift_calculation - 26
 			end
-
 	 		new_word = new_word.push(alphabet[shift_calculation])
-
 		end
 
 		x = new_word.join
-
 		encrypted_text = encrypted_text.push(x)
 
 	end
-
 	puts encrypted_text.join(" ")
-
-	 
 end
-
 
 caesar_cipher("woah broahh what is up my friend", 3)
